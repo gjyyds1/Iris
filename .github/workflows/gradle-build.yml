@@ -36,7 +36,7 @@ jobs:
       uses: gradle/actions/setup-gradle@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew iris
 
     - name: Set release tag based on current date and time
       id: tag
@@ -48,4 +48,4 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         tag: ${{ env.RELEASE_TAG }}
-        artifacts: "build/libs/*.jar"
+        artifacts: "Iris/build/*.jar"
